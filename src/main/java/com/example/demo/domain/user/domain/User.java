@@ -1,0 +1,30 @@
+package com.example.demo.domain.user.domain;
+
+import com.example.demo.domain.user.domain.enums.Role;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "user_name", nullable = false)
+    private String userName;
+
+    @Column(nullable = false)
+    private String accountId;
+
+    private String introduction;
+
+    @Column(nullable = false)
+    private String password;
+
+    private Role role;
+}
